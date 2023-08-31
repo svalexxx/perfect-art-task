@@ -3,6 +3,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.example.Main.findFrequencyElement;
 
 import java.util.stream.Stream;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -12,12 +13,14 @@ public class FrequencyTest {
 
   @ParameterizedTest
   @MethodSource("testData")
+  @DisplayName("Check findFrequencyElement() methode")
   void frequencyTest(String s, String expected) {
     var result = findFrequencyElement(s);
     assertThat(result).isEqualTo(expected);
   }
 
   @Test
+  @DisplayName("Check that empty string return IllegalArgumentException")
   void emptyStringTest() {
     assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(
         () -> findFrequencyElement("")
