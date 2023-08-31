@@ -9,7 +9,7 @@ public class Main {
   public static String findFrequencyElement(String s) {
 
     if (s.isBlank() || s.isEmpty()) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("String is blank or empty.");
     } else {
       Map<Character, Integer> frequencyMap = new HashMap<>();
 
