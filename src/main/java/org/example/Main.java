@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Main {
 
-  public static String findFrequencyElement(String s) {
+  public static String findMostFrequent(String s) {
 
     if (s.isBlank() || s.isEmpty()) {
       throw new IllegalArgumentException("String is blank or empty.");

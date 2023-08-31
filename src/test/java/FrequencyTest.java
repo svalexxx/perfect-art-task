@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.example.Main.findFrequencyElement;
+import static org.example.Main.findMostFrequent;
 
 import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +15,7 @@ public class FrequencyTest {
   @MethodSource("testData")
   @DisplayName("Check findFrequencyElement() methode")
   void frequencyTest(String s, String expected) {
-    var result = findFrequencyElement(s);
+    var result = findMostFrequent(s);
     assertThat(result).isEqualTo(expected);
   }
 
@@ -23,7 +23,7 @@ public class FrequencyTest {
   @DisplayName("Check that empty string return IllegalArgumentException")
   void emptyStringTest() {
     assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(
-        () -> findFrequencyElement("")
+        () -> findMostFrequent("")
     ).withMessageContaining("String is blank or empty.");;
   }
 
